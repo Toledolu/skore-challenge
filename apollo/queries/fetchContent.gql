@@ -1,0 +1,9 @@
+query {
+  contents {
+    id
+    title
+    url
+    type
+    created_at
+  }
+}

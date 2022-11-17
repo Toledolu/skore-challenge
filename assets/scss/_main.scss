@@ -1,0 +1,159 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  width: 100%;
+}
+
+.body-background {
+  background-image: linear-gradient(-45deg, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, rgba(105, 191, 248, .85), rgba(82, 207, 254, .75), rgba(65, 223, 255, .6));
+  background-size: 300% 300%;
+	animation: gradient 7s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 10% 50%;
+	}
+	50% {
+		background-position: 100% 75%;
+	}
+	100% {
+		background-position: 35% 50%;
+	}
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  padding: 20px;
+  width: calc(100vw - 40px);
+  height: calc(100vh - 40px);
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.card {
+  background-color: $background-white;
+  padding: 30px 60px;
+  @include border-and-shadow;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.button {
+  border: 1px solid $font-primary;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1.2rem;
+  background-color: $button-success;
+  color: $font-white;
+  cursor: pointer;
+}
+
+.content-responsive {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.items {
+  background-color: $background-white;
+  width: 80%;
+  margin: auto;
+  .item {
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 5%;
+    margin-bottom: 30px;
+    &:hover {
+      filter: brightness(.75);
+    }
+    .item-head {
+      width: 100%;
+      img {
+        display: block;
+        // height: 250px;
+        border-radius: 10px;
+      }
+      .thumbnail {
+        background: url(https://img.youtube.com/vi/JMkDepOhm7s/0.jpg);
+        width: 100%;
+        height: 250px;
+        background-position: -30px -30px;
+        background-size: contain;
+        border-radius: 10px;
+      }
+      .fallback-img {
+        background-color: $background-white;
+        background-position: center center;
+        background-size: auto;
+        background-size: 200px;
+        height: 250px;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+      }
+    }
+    .item-body {
+      background-color: $background-grey;
+      width: 100%;
+      margin-top: -120px;
+      @include border-and-shadow;
+      padding: 10px 20px;
+      .item-title {
+
+      }
+      .item-paragraph {
+
+      }
+      .item-icons {
+
+      }
+    }
+  }
+}
+
+@include custom-class('col', 'width', 20, 100, '%');
+@include custom-class('mb', 'margin-bottom', 5, 50, 'px');

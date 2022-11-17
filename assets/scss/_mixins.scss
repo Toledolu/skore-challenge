@@ -1,0 +1,15 @@
+@mixin custom-class($class, $prop, $step: 10, $max: 100, $unit: '%') {
+  @for $i from 1 through $step {
+    $val: calc($max / $step) * $i;
+
+    .#{$class}-#{$i} {
+      #{$prop}:  #{$val}#{$unit};
+    }
+  }
+}
+
+@mixin border-and-shadow() {
+  box-shadow: 10px 10px 10px -5px $background-grey;
+  border: 1px solid $font-secondary;
+  border-radius: 10px;
+}
